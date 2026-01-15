@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:startwatch/pages/signup.dart';
 import 'package:startwatch/widgets/startwatch.dart';
 
 import 'package:firebase_core/firebase_core.dart';
@@ -21,11 +22,7 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Startwatch(),
-        ),
-      ),
+      home: Signup()
     );
   }
 }

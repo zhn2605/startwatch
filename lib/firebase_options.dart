@@ -63,6 +63,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '623126320460',
     projectId: 'startwatch-ing',
     storageBucket: 'startwatch-ing.firebasestorage.app',
+    androidClientId: '623126320460-tgf4sca02bgh733lso68k710d2iqjcli.apps.googleusercontent.com',
+    iosClientId: '623126320460-alneed5ualmn2gl4kpjrh3a507lggrhj.apps.googleusercontent.com',
     iosBundleId: 'com.example.startwatch',
   );
 
@@ -72,6 +74,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '623126320460',
     projectId: 'startwatch-ing',
     storageBucket: 'startwatch-ing.firebasestorage.app',
+    androidClientId: '623126320460-tgf4sca02bgh733lso68k710d2iqjcli.apps.googleusercontent.com',
+    iosClientId: '623126320460-alneed5ualmn2gl4kpjrh3a507lggrhj.apps.googleusercontent.com',
     iosBundleId: 'com.example.startwatch',
   );
 
