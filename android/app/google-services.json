@@ -12,7 +12,20 @@
           "package_name": "com.example.startwatch"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "623126320460-tgf4sca02bgh733lso68k710d2iqjcli.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.startwatch",
+            "certificate_hash": "2e1096e60d3084e74fec684002acdb93851c8748"
+          }
+        },
+        {
+          "client_id": "623126320460-kkbtm4f6mcnvv0ivpe0ntb04klifnvtt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyByoX4nh8NUCnYbDFRBgXz_6chkuMhorMQ"
@@ -20,7 +33,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "623126320460-kkbtm4f6mcnvv0ivpe0ntb04klifnvtt.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "623126320460-alneed5ualmn2gl4kpjrh3a507lggrhj.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.startwatch"
+              }
+            }
+          ]
         }
       }
     }
