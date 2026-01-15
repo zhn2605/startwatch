@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "623126320460",
+    "project_id": "startwatch-ing",
+    "storage_bucket": "startwatch-ing.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:623126320460:android:a8fd74228ac1bf82dd2be9",
+        "android_client_info": {
+          "package_name": "com.example.startwatch"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyByoX4nh8NUCnYbDFRBgXz_6chkuMhorMQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
