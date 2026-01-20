@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:startwatch/pages/services/auth_service.dart';
 import 'package:startwatch/widgets/clock_view.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 /// The main stopwatch view
 class Startwatch extends StatefulWidget {
@@ -11,6 +13,7 @@ class Startwatch extends StatefulWidget {
 }
 
 class _StartwatchState extends State<Startwatch>
+  // clock stuff
     with SingleTickerProviderStateMixin {
   late final Ticker _ticker;
 
@@ -114,6 +117,36 @@ class _StartwatchState extends State<Startwatch>
     });
   }
 
+  // signup stuff
+  final User? user = AuthService().currentUser;
+
+  Future<void> signOut() async {
+    await AuthService().signOut();
+  }
+
+  Widget _title() {
+    return Text('register. now.');
+  }
+
+  Widget _userUid() {
+    return Text(
+      user?.email ?? 'User email',
+      style: TextStyle(
+            fontSize: 20, //TODO: change with size
+            fontWeight: FontWeight.w500
+          ),
+    );
+  }
+
+  Widget _signOutButton() {
+    return ElevatedButton(
+      onPressed: signOut,
+      child: const Text(
+        'Sign out'
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     var mq = MediaQuery.of(context);
@@ -133,7 +166,7 @@ class _StartwatchState extends State<Startwatch>
           ),
         ),
         Text(
-          '$formattedTime',
+          formattedTime,
           style: TextStyle(
             fontSize: .08 * size.width, 
             fontWeight: FontWeight.bold
@@ -173,6 +206,8 @@ class _StartwatchState extends State<Startwatch>
             ),
           ],
         ),
+        _userUid(),
+        _signOutButton()
       ],
     );
   }
