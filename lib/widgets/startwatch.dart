@@ -152,63 +152,66 @@ class _StartwatchState extends State<Startwatch>
     var mq = MediaQuery.of(context);
     var size = mq.size;
 
-    final ms = elapsedMs;
-
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        ClockView(),
-        Text(
-          formattedDWYs,
-          style: TextStyle(
-            fontSize: .05 * size.width, 
-            fontWeight: FontWeight.w500
-          ),
-        ),
-        Text(
-          formattedTime,
-          style: TextStyle(
-            fontSize: .08 * size.width, 
-            fontWeight: FontWeight.bold
-          ),
-        ),
-        const SizedBox(height: 12),
-        Row(
+    return Scaffold(
+      body: Container(
+        color: Colors.white,
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            ElevatedButton(
-              onPressed: running ? null : _start,
-              child: const Text('Start'),
+            ClockView(),
+            Text(
+              formattedDWYs,
+              style: TextStyle(
+                fontSize: .05 * size.width, 
+                fontWeight: FontWeight.w500
+              ),
             ),
-            const SizedBox(width: 8),
-            ElevatedButton(
-              onPressed: running ? _stop : null,
-              child: const Text('Stop'),
+            Text(
+              formattedTime,
+              style: TextStyle(
+                fontSize: .08 * size.width, 
+                fontWeight: FontWeight.bold
+              ),
             ),
-            const SizedBox(width: 8),
-            ElevatedButton(
-              onPressed: _reset,
-              child: const Text('Reset'),
+            const SizedBox(height: 12),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                ElevatedButton(
+                  onPressed: running ? null : _start,
+                  child: const Text('Start'),
+                ),
+                const SizedBox(width: 8),
+                ElevatedButton(
+                  onPressed: running ? _stop : null,
+                  child: const Text('Stop'),
+                ),
+                const SizedBox(width: 8),
+                ElevatedButton(
+                  onPressed: _reset,
+                  child: const Text('Reset'),
+                ),
+                // add a debug button to add 1 milion miliseconds t othe thing (subtract from the resumed time thing)
+                const SizedBox(width: 8),
+                ElevatedButton(
+                  onPressed: () {
+                    setState(() {
+                      if (running) {
+                        _resumeMs -= 100000000;
+                      } else {
+                        _accumulatedMs += 100000000;
+                      }
+                    });
+                  },
+                  child: const Text('+1,000,000 ms'),
+                ),
+              ],
             ),
-            // add a debug button to add 1 milion miliseconds t othe thing (subtract from the resumed time thing)
-            const SizedBox(width: 8),
-            ElevatedButton(
-              onPressed: () {
-                setState(() {
-                  if (running) {
-                    _resumeMs -= 100000000;
-                  } else {
-                    _accumulatedMs += 100000000;
-                  }
-                });
-              },
-              child: const Text('+1,000,000 ms'),
-            ),
+            _userUid(),
+            _signOutButton()
           ],
-        ),
-        _userUid(),
-        _signOutButton()
-      ],
+        )
+      )
     );
   }
 }
